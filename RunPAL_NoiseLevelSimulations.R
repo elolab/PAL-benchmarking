@@ -23,9 +23,9 @@ for(i in 1:length(datas)){
   genesd = apply(tempdata[,grep("Control",colnames(tempdata),value=T)], 1, sd) 
   tempdata = tempdata[genesd>0,]
   filename = paste("ResultsPAL_Noise", ".RData", sep=gsub("data","",names(datas[i])))
-  res = PAL(tempdata, sampleinfo, "GroupLabel", neutralise="Age", mainfeature="TimeFromEvent", 
-             userandom="Donor", neutralisationformula=NULL, pathwayformula=NULL, 
-             neutralisationmodel="lmer", pathwaymodel="lmer",  pathwayadress=path, 
+  res = PAL(tempdata, sampleinfo, "GroupLabel", adjust="Age", mainfeature="TimeFromEvent", 
+             userandom="Donor", adjustmentformula=NULL, pathwayformula=NULL, 
+             adjustmentmodel="lmer", pathwaymodel="lmer",  pathwayadress=path, 
              useKEGG=FALSE, score="activity", nodemin=5, seed=1234)
   save(file=filename, list=c("res"))
   reslist[[i]] = res
