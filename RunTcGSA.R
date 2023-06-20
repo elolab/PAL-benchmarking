@@ -46,7 +46,7 @@ significant_tcgsa_BabyDiet_MultiDonor = signifLRT.TcGSA(tcgsa_BabyDiet_MultiDono
 res_tcgsa_BabyDiet_MultiDonor = multtest.TcGSA(tcgsa_BabyDiet_MultiDonor)
 
 # Save results
-setwd("C:/Users/makija/Documents/Research/Project 14 PASI for longitudinal data/Results/TcGSA results")
+setwd("path/to/wanted/result/folder")
 save(file="Results_TcGSA.RData", list=c("tcgsa_DAISY", "res_tcgsa_DAISY", "tcgsa_pbmc", "res_tcgsa_pbmc", "tcgsa_cd4", "res_tcgsa_cd4",
                                         "tcgsa_cd8", "res_tcgsa_cd8", "tcgsa_BabyDiet", "res_tcgsa_BabyDiet", "tcgsa_BabyDiet_MultiDonor", "res_tcgsa_BabyDiet_MultiDonor"))
 write.table(significant_tcgsa_DAISY, file="TcGSA_significant_DAISY.txt", sep="\t", quote=F, row.names=F)
